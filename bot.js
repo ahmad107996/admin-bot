@@ -8,7 +8,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`#help || By - Monstis||${client.guilds.size} server`,"http://twitch.tv/Death Shop")
+client.user.setGame(`#help ||By - Monstis||`,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
@@ -34,8 +34,8 @@ client.on('message', message => {
 
 client.on("message", async message => {
         if(!message.channel.guild) return;
- var prefix= "#";
-        if(message.content.startsWith(prefix # 'server')) {
+ var prefix= "+";
+        if(message.content.startsWith(prefix + 'server')) {
         let guild = message.guild
         let channel = message.channel
         let guildicon = guild.icon_url
@@ -68,7 +68,7 @@ client.on("message", async message => {
     });
 
 client.on('message', function(message) {
-    if (message.content == "#clear") {
+    if (message.content == "+clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -156,9 +156,9 @@ const prefix = "#";
   .setAuthor('Kicked !', user.displayAvatarURL)
   .setColor("RANDOM")
   .setTimestamp()
-  .addField("User:",  `[ # ${user.tag} # ]`)
-  .addField("By:", `[  # ${message.author.tag} #  ]`)
-  .addField("Reason:", `[ # ${reason} #  ]`)
+  .addField("User:",  `[ + ${user.tag} + ]`)
+  .addField("By:", `[  + ${message.author.tag} +  ]`)
+  .addField("Reason:", `[ + ${reason} +  ]`)
   client.channels.get("504986016357285888").send({embed : banembed})
 }
 });
@@ -193,7 +193,7 @@ message.channel.send(`**baneed from this server**`)
 
 client.on('message', async message => {
   let args = message.content.split(" ");
-  if(message.content.startsWith(prefix # "mute")) {
+  if(message.content.startsWith(prefix + "mute")) {
     if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send('').then(msg => {
       msg.delete(3500);
       message.delete(3500);
