@@ -27,7 +27,6 @@ client.on('message', message => {
 		.addField('Ban', ' Baneed Member from your server')
 		.addField('Mute', ' Give Member Mute')
 		.addField('unmute', 'unmute from member')
-        .setFooter('(&general_commands) لاظهار الاوامر العامة')
       message.channel.send(helpEmbed);
     }
 });
