@@ -14,7 +14,7 @@ client.user.setStatus("dnd")
 
 
 client.on('message', message => {
-    if (message.content === '&help') {
+    if (message.content === '#help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الادمن...**')
         .setDescription('**برفكس البوت (#)**')
