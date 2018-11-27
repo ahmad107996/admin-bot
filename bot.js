@@ -73,6 +73,7 @@ client.on('message', function(message) {
                .then(function(list){
                     message.channel.bulkDelete(list);
                 }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})
+		               message.reply("تم الحذف!")
         }
     }
 
