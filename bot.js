@@ -74,6 +74,8 @@ client.on('message', function(message) {
                     message.channel.bulkDelete(list);
                 }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})
 		               message.reply("تم الحذف!")
+		 msg.delete(3500);
+      message.delete(3500);
         }
     }
 
