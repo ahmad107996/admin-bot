@@ -14,6 +14,7 @@ client.user.setStatus("dnd")
 
 
 client.on('message', message => {
+	var prefix = "%";
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
         let support = message.guild.roles.find("name","Support Team");
