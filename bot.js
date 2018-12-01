@@ -474,10 +474,11 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
-var welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
+const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
  
 client.on('message', message => {
-	
+	const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
+
            if (!message.channel.guild) return;
 
     let room = message.content.split(" ").slice(1);
