@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
 var prefix = "#";
 client.on('ready', () => {
    console.log(`----------------`);
@@ -474,9 +475,8 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
- 
+
 client.on('message', message => {
-	const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
 
            if (!message.channel.guild) return;
 
