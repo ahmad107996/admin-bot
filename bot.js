@@ -217,7 +217,7 @@ client.on('message', message => {
 	.addField('toggleWelcome', 'Drag/pull the member to you')
 	.addField('toggleDmwelcome', 'Send a welcome message (DM)')
 	.addField('toggleInvitedby', 'Activation invitedby')
-	.addField('verify', 'Activation member||يلازم رتبت||Verified||')
+	.addField('verify', 'Activation member||يلازم رتبت||*`Verified`*||')
 	message.channel.send(helpEmbed);
     }
 });
