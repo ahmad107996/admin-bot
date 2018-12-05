@@ -65,7 +65,7 @@ client.on("message", message => {
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم بائع** [__**${message.guild.name}**__]`)
+                        .setTitle(`**تقديم على رتبه** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
                         .addField('**`هل سيتفاعل ؟`**',`${ask}`)
@@ -340,6 +340,8 @@ client.on('message', message => {
 	.addField('تقديم', 'لي التقديم على رتبه في السيرفر')
 	.addField('رفض', 'لي رفض عضو')
 	.addField('قبول', 'لي قبول عضو')
+	.addField('room1', 'لي انشاء روم التقديمات')
+	.addField('room2', 'لي انشاء روم القبول-الرفض')
 	message.channel.send(helpEmbed);
     }
 });
