@@ -38,7 +38,7 @@ client.on("message", message => {
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **هل تتفاعل في البيع🎙**' )
+                            m.edit( message.member + ', **هل تتفاعل في الرتبه🎙**' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
