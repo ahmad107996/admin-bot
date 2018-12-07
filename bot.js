@@ -11,7 +11,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`#help ||By - Saudi Shop TM||`,"http://twitch.tv/Death Shop")
+client.user.setGame(`#help ||By - Saudi Shop TM||`,"https://www.twitch.tv/ahmad107996")
 client.user.setStatus("dnd")
 });
 
@@ -334,7 +334,7 @@ client.on('message', message => {
 	.addField('roler', 'remove member role')
 	.addField('move', 'Drag/pull the member to you')  
 	.addField('setWelcomer', 'Activate room welcome')  
-	.addField('toggleWelcome', 'Drag/pull the member to you')
+	.addField('toggleWelcome', '')
 	.addField('toggleDmwelcome', 'Send a welcome message (DM)')
 	.addField('toggleInvitedby', 'Activation invitedby')
 	.addField('تقديم', 'لي التقديم على رتبه في السيرفر')
