@@ -319,8 +319,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === '#help') {
         let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الادمن...**')
-        .setDescription('**برفكس البوت (#)**')
+        .setTitle('**برفكس البوت(#)**')
         .addField('mc', 'Lock Room')
         .addField('umc', 'Unlock Room')
         .addField('server', 'Info YourServer')
