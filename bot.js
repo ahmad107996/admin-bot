@@ -92,6 +92,7 @@ client.on("message", message => {
     }
 }
         });
+
         client.on('message', message=>{
             if(message.content.startsWith("#room1")) {
             if(!message.channel.guild) return;
