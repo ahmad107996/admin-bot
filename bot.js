@@ -330,6 +330,13 @@ client.on('message', message => {
 	.addField('Ban', ' اعطاء باند')
 	.addField('Mute', 'اعطاء ميوت')
 	.addField('unmute', 'فك ميوت')
+	message.channel.send(helpEmbed);
+    }
+});
+
+client.on('message', message => {
+    if (message.content === '#help') {
+        let helpEmbed = new Discord.RichEmbed()
 	.addField('role', 'اعطاء رتبه')
 	.addField('roler', 'سحب رتبه')
 	.addField('move', 'سحب عضو')  
@@ -344,6 +351,8 @@ client.on('message', message => {
 	message.channel.send(helpEmbed);
     }
 });
+
+
 
 client.on("message", async message => {
         if(!message.channel.guild) return;
