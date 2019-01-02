@@ -320,23 +320,22 @@ client.on('message', message => {
     if (message.content === '#help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**برفكس البوت(#)**')
-        .addField('mc', 'Lock Room')
-        .addField('umc', 'Unlock Room')
-        .addField('server', 'Info YourServer')
-        .addField('prefix||%new', 'open new tickets')
-	.addField('clear', 'Clear Chat')
-        .addField('link', 'Link invite for server')
-	.addField('Kick', ' Kick member from your server')
-	.addField('Ban', ' Baneed Member from your server')
-	.addField('Mute', ' Give Member Mute')
-	.addField('unmute', 'unmute from member')
-	.addField('role', 'give member role')
-	.addField('roler', 'remove member role')
-	.addField('move', 'Drag/pull the member to you')  
-	.addField('setWelcomer', 'Activate room welcome')  
-	.addField('toggleWelcome', '')
-	.addField('toggleDmwelcome', 'Send a welcome message (DM)')
-	.addField('toggleInvitedby', 'Activation invitedby')
+        .addField('mc', 'قفل الروم')
+        .addField('umc', 'فتح الروم')
+        .addField('server', 'معلومات السيرفر')
+        .addField('%new', 'صنع تذكره')
+	.addField('clear', 'حذف الشات')
+        .addField('link', 'انشاء رابط دعوه')
+	.addField('Kick', 'اعطاء كيك')
+	.addField('Ban', ' اعطاء باند')
+	.addField('Mute', 'اعطاء ميوت')
+	.addField('unmute', 'فك ميوت')
+	.addField('role', 'اعطاء رتبه')
+	.addField('roler', 'سحب رتبه')
+	.addField('move', 'سحب عضو')  
+	.addField('setWelcomer', 'تفعيل روم الترحيب')  
+	.addField('toggleDmwelcome', 'ارسله رسالة ترحيب في الخاص (DM)')
+	.addField('toggleInvitedby', 'تفعيل تم تعدوتك من قبل')
 	.addField('تقديم', 'لي التقديم على رتبه في السيرفر')
 	.addField('رفض', 'لي رفض عضو')
 	.addField('قبول', 'لي قبول عضو')
@@ -655,26 +654,7 @@ fs.writeFile("./welcomer.json", JSON.stringify(welcome), (err) => {
 if (err) console.error(err)
 })
     }})
-client.on('message', message => {
-  
-    if(message.content.startsWith(prefix + "toggleWelcome")) {
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
-        if(!welcome[message.guild.id]) welcome[message.guild.id] = {
-          onoff: 'Off'
-        }
-          if(welcome[message.guild.id].onff === 'Off') return [message.channel.send(`**The Welcome Is __𝐎𝐍__ !**`), welcome[message.guild.id].onoff = 'On']
-          if(welcome[message.guild.id].onoff === 'On') return [message.channel.send(`**The Welcome Is __𝐎𝐅𝐅__ !**`), welcome[message.guild.id].onoff = 'Off']
-          fs.writeFile("./welcome.json", JSON.stringify(welcome), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            })
-          }
-          
-        })
-        
+
         client.on('message', message => {
   
     if(message.content.startsWith(prefix + "toggleDmwelcome")) {
