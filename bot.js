@@ -398,7 +398,7 @@ client.on('message', function(message) {
     let messageArray = message.content.split(" ");
     let args = messageArray[1]
     if(message.content.startsWith(prefix + "cc")) {
-        //  if(Number(args) //== NaN) return message.reply(`Sry but its in numbers only no text`);
+         if(isNaN(args[1])) return message.reply(`Sry but its in numbers only no text`);
          if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('You have no perms.')
         if(!args) return message.reply(`Pick a number`)
       
@@ -406,10 +406,8 @@ client.on('message', function(message) {
     for(o = 1; o < `${parseInt(args) + 1}`; ++o)
     message.guild.createRole({name: `${o}`, color: "RANDOM"})
     message.reply(`Im making the colors now.`)
-    // message.channel.send(`Now making the colors but if u made it like 1 it will be -1 , Q,E : If u made used the command and u typed in numbers \`${args}\` it will make one so it will be \`${--args}\``)
 }
 });
-
 
 client.on("message", async message => {
         if(!message.channel.guild) return;
