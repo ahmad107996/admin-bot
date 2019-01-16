@@ -958,7 +958,6 @@ leavemsg: thisMessage,
 onoff: 'On',
 leave: 'On'
     }
-    fs.writeFile("./welcomer.json", JSON.stringify(welcome), (err) => {
     if (err) console.error(err)
   })
    } 
