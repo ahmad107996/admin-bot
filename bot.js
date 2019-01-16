@@ -903,7 +903,6 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 });
 
-const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
    if(message.content.startsWith(prefix + "setLeave")) {
