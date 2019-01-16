@@ -962,7 +962,7 @@ leave: 'On'
             )
         })
     })
-})
+});
 
 
       client.on("guildMemberRemove", member => {
