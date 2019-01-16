@@ -904,67 +904,69 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on('message', async message => {
-  let messageArray = message.content.split(" ");
- if(message.content.startsWith(prefix + "setLeave")) {
-           
-  let filter = m => m.author.id === message.author.id;
-  let thisMessage;
-  let thisFalse;
+    let messageArray = message.content.split(" ");
+   if(message.content.startsWith(prefix + "setLeave")) {
+             
+    let filter = m => m.author.id === message.author.id;
+    let thisMessage;
+    let thisFalse;
 
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('You don\'t have permission').then(msg => {
-     msg.delete(4500);
-     message.delete(4500);
-  });
-  
-  message.channel.send(':pencil: **| من فضلك اكتب الرساله الان... :pencil2: **').then(msg => {
-
-      message.channel.awaitMessages(filter, {
-        max: 1,
-        time: 90000,
-        errors: ['time']
-      })
-      .then(collected => {
-          collected.first().delete();
-          thisMessage = collected.first().content;
-          let boi;
-          msg.edit(':scroll: **| اكتب اسم الروم الان... :pencil2: **').then(msg => {
+    if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('You don\'t have permission').then(msg => {
+       msg.delete(4500);
+       message.delete(4500);
+    });
     
-              message.channel.awaitMessages(filter, {
-                max: 1,
-                time: 90000,
-                errors: ['time']
-              })
-              .then(collected => {
-                  collected.first().delete();
-                  boi = collected.first().content;
-                  msg.edit('✅ **| تم الاعداد بنجاح...  **').then(msg => {
+    message.channel.send(':pencil: **| من فضلك اكتب الرساله الان... :pencil2: **').then(msg => {
+
+        message.channel.awaitMessages(filter, {
+          max: 1,
+          time: 90000,
+          errors: ['time']
+        })
+        .then(collected => {
+            collected.first().delete();
+            thisMessage = collected.first().content;
+            let boi;
+            msg.edit(':scroll: **| اكتب اسم الروم الان... :pencil2: **').then(msg => {
       
-                    message.channel.awaitMessages(filter, {
-                      max: 1,
-                      time: 90000,
-                      errors: ['time']
-                    })
-                    let embed = new Discord.RichEmbed()
-                    .setTitle('**Done The Leave Msg Code Has Been Setup**')
-                    .addField('Message:', `${thisMessage}`)
-                    .addField('Channel:', `${boi}`)
-                    .setThumbnail(message.author.avatarURL)
-                    .setFooter(`${client.user.username}`)
-                   message.channel.sendEmbed(embed)
-  welcome[message.guild.id] = {
+                message.channel.awaitMessages(filter, {
+                  max: 1,
+                  time: 90000,
+                  errors: ['time']
+                })
+                .then(collected => {
+                    collected.first().delete();
+                    boi = collected.first().content;
+                    msg.edit('✅ **| تم الاعداد بنجاح...  **').then(msg => {
+        
+                      message.channel.awaitMessages(filter, {
+                        max: 1,
+                        time: 90000,
+                        errors: ['time']
+                      })
+                      let embed = new Discord.RichEmbed()
+                      .setTitle('**Done The Leave Msg Code Has Been Setup**')
+                      .addField('Message:', `${thisMessage}`)
+                      .addField('Channel:', `${boi}`)
+                      .setThumbnail(message.author.avatarURL)
+                      .setFooter(`${client.user.username}`)
+                     message.channel.sendEmbed(embed)
+    welcome[message.guild.id] = {
 leavechannel: boi,
 leavemsg: thisMessage,
 onoff: 'On',
 leave: 'On'
-  }
-  if (err) console.error(err)
-})
- } 
-          )
-      })
+    }
+    fs.writeFile("./welcomer.json", JSON.stringify(welcome), (err) => {
+    if (err) console.error(err)
   })
+   } 
+            )
+        })
+    })
 })
-  });
+    })
+}})
 
 
       client.on("guildMemberRemove", member => {
@@ -979,5 +981,4 @@ leave: 'On'
     if(!welcomer) return;
      welcomer.send(`${member} ${welcome[member.guild.id].leavemsg}`);
       });
-
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
