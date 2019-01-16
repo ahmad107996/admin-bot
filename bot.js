@@ -902,7 +902,6 @@ client.on("guildMemberAdd", member => {
 انت العضو رقم ${member.guild.memberCount} `) 
 }).catch(console.error)
 });
-
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
    if(message.content.startsWith(prefix + "setLeave")) {
@@ -957,7 +956,6 @@ leavemsg: thisMessage,
 onoff: 'On',
 leave: 'On'
     }
-    fs.writeFile("./welcomer.json", JSON.stringify(welcome), (err) => {
     if (err) console.error(err)
   })
    } 
@@ -965,8 +963,6 @@ leave: 'On'
         })
     })
 })
-    })
-}})
 
 
       client.on("guildMemberRemove", member => {
@@ -981,4 +977,6 @@ leave: 'On'
     if(!welcomer) return;
      welcomer.send(`${member} ${welcome[member.guild.id].leavemsg}`);
       });
+
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
