@@ -384,7 +384,7 @@ client.on('message', message => {
 	.addField('room1', 'لي انشاء روم التقديمات')
 	.addField('room2', 'لي انشاء روم القبول-الرفض')
 	.addField('room2', 'لي انشاء روم القبول-الرفض')
-	.addField('setuser', ' يعملك روم بي عدد الاعضاء')
+	.addField('cc', 'لصنع الاوان')
 	message.channel.send(helpEmbed);
     }
 });
@@ -394,17 +394,21 @@ client.on('message', message => {
         message.reply("http://admin-bot.epizy.com/?i=1");//Toxic Codes
     }
 });
-client.on('message',async msg => {//Toxic Codes
-  if(msg.content.startsWith(prefix + "setuser")) {//Toxic Codes
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **ليس لديك صلاحيه**');//Toxic Codes
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');//Toxic Codes
-  msg.guild.createChannel(`Members : ◤ → ${client.users.size} ← ◢` , 'voice').then(time => {//Toxic Codes
-    });//Toxic Codes
-
-  }
- 
+client.on('message', function(message) {
+    let messageArray = message.content.split(" ");
+    let args = messageArray[1]
+    if(message.content.startsWith(prefix + "cc")) {
+        //  if(Number(args) //== NaN) return message.reply(`Sry but its in numbers only no text`);
+         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('You have no perms.')
+        if(!args) return message.reply(`Pick a number`)
+      
+    let o;
+    for(o = 1; o < `${parseInt(args) + 1}`; ++o)
+    message.guild.createRole({name: `${o}`, color: "RANDOM"})
+    message.reply(`Im making the colors now.`)
+    // message.channel.send(`Now making the colors but if u made it like 1 it will be -1 , Q,E : If u made used the command and u typed in numbers \`${args}\` it will make one so it will be \`${--args}\``)
+}
 });
-
 
 
 client.on("message", async message => {
