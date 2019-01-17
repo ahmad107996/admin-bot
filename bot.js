@@ -52,18 +52,11 @@ client.on('message', async msg => {
           permissions:[]
         })
         }
-        var b = msg.guild.roles.find("name", 'roblox');
-        if(!b){
-        b =  await msg.guild.createRole({
-          name: "roblox",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
-        var black = msg.guild.roles.find("name", 'Blacksquad');
+
+        var black = msg.guild.roles.find("name", 'roblox');
     if(!black){
         black =  await msg.guild.createRole({
-          name: "Blacksquad",
+          name: "roblox",
           color: "#ffffff",
           permissions:[]
         })
@@ -72,27 +65,24 @@ client.on('message', async msg => {
         if (msg.content.startsWith(prefix +'addmerole')) {
  
         if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة League Of Legends 535459149723598878 \n2- لعبة Minecraft 535459149908017153 \n3- لعبة Fortnite 535459149220413441 \n4- لعبة Cs GO  535465045245558785\n5-لعبة roblox 535466102331801620  \n6- لعبة Blacksquad 🍸\n7- الغاء ❌ \n8- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
+msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة League Of Legends 535459149723598878 \n2- لعبة Minecraft 535459149908017153 \n3- لعبة Fortnite 535459149220413441 \n4- لعبة Cs GO  535465045245558785\n5-لعبة roblox 535466102331801620  \n6- الغاء ❌ \n7- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
      res.react('535459149723598878').then(r=>{    
      res.react('535459149908017153').then(r=>{
      res.react('535459149220413441').then(r=>{
      res.react('535465045245558785').then(r=>{
      res.react('535466102331801620').then(r=>{     
-     res.react('🍸').then(r=>{
      res.react('❌').then(r=>{
  
     let aaa = (reaction, user) => reaction.emoji.name === '535459149723598878' && user.id === msg.author.id;    
     let mmm = (reaction, user) => reaction.emoji.name === '535459149908017153' && user.id === msg.author.id;
     let fff = (reaction, user) => reaction.emoji.name === '535459149220413441' && user.id === msg.author.id;
     let bbb = (reaction, user) => reaction.emoji.name === '535465045245558785' && user.id === msg.author.id;
-    let ahh = (reaction, user) => reaction.emoji.name === '535466102331801620' && user.id === msg.author.id;
-    let bbbb = (reaction, user) => reaction.emoji.name === '🍸' && user.id === msg.author.id;
+    let bbbb = (reaction, user) => reaction.emoji.name === '535466102331801620' && user.id === msg.author.id;
     let ccc = (reaction, user) => reaction.emoji.name === '❌' && user.id === msg.author.id;
  
     let aa = res.createReactionCollector(aaa, { maxMatches:1 , time: 20000 , });
     let mm = res.createReactionCollector(mmm, { maxMatches:1 , time: 20000 , });
     let ff = res.createReactionCollector(fff, { maxMatches:1 , time: 20000 , });
-    let ah = res.createReactionCollector(ahh, { maxMatches:1 , time: 20000 , });
     let bb = res.createReactionCollector(bbb, { maxMatches:1 , time: 20000 , });
     let bl = res.createReactionCollector(bbbb,{ maxMatches:1 , time: 20000 , });
     let cc = res.createReactionCollector(ccc, { maxMatches:1 , time: 20000 , });
@@ -107,11 +97,7 @@ mm.on("collect", r => {
     msg.channel.send('`تم اعطائك رتبة للعبة Mincraft `');
     msg.delete();
 })
-ah.on("collect", r => {
-    msg.guild.member(user.id).addRole(b);
-    msg.channel.send('`تم اعطائك رتبة للعبة roblox`');
-    msg.delete();
-    })
+
 ff.on("collect", r => {
     msg.guild.member(user.id).addRole(f);
     msg.channel.send('`تم اعطائك رتبة للعبة Fortnite `');
@@ -124,7 +110,7 @@ bb.on("collect", r => {
 })
 bl.on("collect", r => {
     msg.guild.member(user.id).addRole(black);
-    msg.channel.send('`تم اعطائك رتبة للعبة Blacksquad `');
+    msg.channel.send('`تم اعطائك رتبة للعبة roblox `');
     msg.delete();
 })
 cc.on("collect", r => {
