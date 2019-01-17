@@ -65,7 +65,7 @@ client.on('message', async msg => {
         if (msg.content.startsWith(prefix +'addmerole')) {
  
         if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة League Of Legends <:roblox:535466102331801620> \n2- لعبة Minecraft 535459149908017153 \n3- لعبة Fortnite 535459149220413441 \n4- لعبة Cs GO  535465045245558785\n5-لعبة roblox 535466102331801620  \n6- الغاء ❌ \n7- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
+msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة League Of Legends <:LeagueOfLegends:535459149723598878>\n2- لعبة Minecraft <:Minecraft:535459149908017153>\n3- لعبة Fortnite <:fortnite:535459149220413441>\n4- لعبة Cs GO  <:CsGO:535465045245558785>\n5-لعبة roblox <:roblox:535466102331801620>\n6- الغاء ❌ \n7- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
      res.react('535459149723598878').then(r=>{    
      res.react('535459149908017153').then(r=>{
      res.react('535459149220413441').then(r=>{
@@ -125,6 +125,7 @@ cc.on("collect", r => {
      })
      }
      });
+
 
 
 
