@@ -72,18 +72,20 @@ client.on('message', async msg => {
         if (msg.content.startsWith(prefix +'addmerole')) {
  
         if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة League Of Legends ⚽ \n2- لعبة Minecraft 👶 \n3- لعبة Fortnite 👊 \n4- لعبة Cs GO  👌\n5-لعبة roblox  \n6- لعبة Blacksquad 🍸\n7- الغاء ❌ \n8- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
-     res.react('⚽').then(r=>{    
-     res.react('👶').then(r=>{
+msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة League Of Legends 535459149723598878 \n2- لعبة Minecraft 535459149908017153 \n3- لعبة Fortnite 535459149220413441 \n4- لعبة Cs GO  535465045245558785\n5-لعبة roblox 535466102331801620  \n6- لعبة Blacksquad 🍸\n7- الغاء ❌ \n8- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
+     res.react('535459149723598878').then(r=>{    
+     res.react('535459149908017153').then(r=>{
      res.react('535459149220413441').then(r=>{
-     res.react('👌').then(r=>{
+     res.react('535465045245558785').then(r=>{
+     res.react('535466102331801620').then(r=>{     
      res.react('🍸').then(r=>{
      res.react('❌').then(r=>{
  
-    let aaa = (reaction, user) => reaction.emoji.name === '⚽' && user.id === msg.author.id;    
-    let mmm = (reaction, user) => reaction.emoji.name === '👶' && user.id === msg.author.id;
+    let aaa = (reaction, user) => reaction.emoji.name === '535459149723598878' && user.id === msg.author.id;    
+    let mmm = (reaction, user) => reaction.emoji.name === '535459149908017153' && user.id === msg.author.id;
     let fff = (reaction, user) => reaction.emoji.name === '535459149220413441' && user.id === msg.author.id;
-    let bbb = (reaction, user) => reaction.emoji.name === '👌' && user.id === msg.author.id;
+    let bbb = (reaction, user) => reaction.emoji.name === '535465045245558785' && user.id === msg.author.id;
+    let bb = (reaction, user) => reaction.emoji.name === '535466102331801620' && user.id === msg.author.id;
     let bbbb = (reaction, user) => reaction.emoji.name === '🍸' && user.id === msg.author.id;
     let ccc = (reaction, user) => reaction.emoji.name === '❌' && user.id === msg.author.id;
  
@@ -91,6 +93,7 @@ msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريد�
     let mm = res.createReactionCollector(mmm, { maxMatches:1 , time: 20000 , });
     let ff = res.createReactionCollector(fff, { maxMatches:1 , time: 20000 , });
     let bb = res.createReactionCollector(bbb, { maxMatches:1 , time: 20000 , });
+    let bb = res.createReactionCollector(bb, { maxMatches:1 , time: 20000 , });
     let bl = res.createReactionCollector(bbbb,{ maxMatches:1 , time: 20000 , });
     let cc = res.createReactionCollector(ccc, { maxMatches:1 , time: 20000 , });
  
