@@ -13,7 +13,9 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`#help`,"https://www.twitch.tv/ahmad107996")
 client.user.setStatus("dnd")
-});client.on('message', async msg => {
+});
+
+client.on('message', async msg => {
     var prefix = ".";
     var user = msg.author;
             var a = msg.guild.roles.find("name", 'League Of Legends');
@@ -90,8 +92,8 @@ msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريد�
     let aa = res.createReactionCollector(aaa, { maxMatches:1 , time: 20000 , });
     let mm = res.createReactionCollector(mmm, { maxMatches:1 , time: 20000 , });
     let ff = res.createReactionCollector(fff, { maxMatches:1 , time: 20000 , });
-    let a = res.createReactionCollector(a, { maxMatches:1 , time: 20000 , });
-    let bb = res.createReactionCollector(bb, { maxMatches:1 , time: 20000 , });
+    let a = res.createReactionCollector(aa, { maxMatches:1 , time: 20000 , });
+    let bb = res.createReactionCollector(bbb, { maxMatches:1 , time: 20000 , });
     let bl = res.createReactionCollector(bbbb,{ maxMatches:1 , time: 20000 , });
     let cc = res.createReactionCollector(ccc, { maxMatches:1 , time: 20000 , });
  
@@ -137,6 +139,7 @@ cc.on("collect", r => {
      })
      }
      });
+
 
 
 const devs = ["348953140315291649"];
