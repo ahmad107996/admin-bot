@@ -15,130 +15,6 @@ client.user.setGame(`#help`,"https://www.twitch.tv/ahmad107996")
 client.user.setStatus("dnd")
 });
 
-client.on('message', async msg => {
-    var prefix = ".";
-    var user = msg.author;
-            var a = msg.guild.roles.find("name", 'League Of Legends');
-        if(!a){
-        a = await msg.guild.createRole({
-          name: "League Of Legends",
-          color: "#ffffff",
-          permissions:[]
-        })
-       
-        }
-        var m = msg.guild.roles.find("name", 'Minecraft');
-    if(!m){
-        m =  await msg.guild.createRole({
-          name: "Minecraft",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
-        var f = msg.guild.roles.find("name", 'Fortnite');
-        if(!f){
-        f =  await msg.guild.createRole({
-          name: "Fortnite",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
-var m = msg.guild.roles.find("name", 'Minecraft');
-    if(!m){
-        m =  await msg.guild.createRole({
-          name: "Minecraft",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
-        var f = msg.guild.roles.find("name", 'Cs GO');
-        if(!f){
-        f =  await msg.guild.createRole({
-          name: "Cs GO",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
-        var b = msg.guild.roles.find("name", 'Roblox');
-        if(!b){
-        b =  await msg.guild.createRole({
-          name: "Roblox",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
-        var black = msg.guild.roles.find("name", 'Blacksquad');
-    if(!black){
-        black =  await msg.guild.createRole({
-          name: "Blacksquad",
-          color: "#ffffff",
-          permissions:[]
-        })
-        }
- 
-        if (msg.content.startsWith(prefix +'addmerole')) {
- 
-        if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-msg.channel.send(`يرحي اختيار رتبة اللعبة الذي تريدها \n1- لعبة LeagueOfLegends <:LeagueOfLegends:535459149723598878>\n2- لعبة Minecraft <:Minecraft:535459149908017153>\n3- لعبة fortnite <:fortnite:535459149220413441>\n4- لعبة roblox  <:roblox:535466102331801620>\n5- لعبة Blacksquad 🍸\n6- الغاء ❌ \n7- **لديك60 ثانية للاختيار **\n<@${msg.author.id}>`).then(res => {    
-     res.react('535459149723598878').then(r=>{   
-     res.react('535459149908017153').then(r=>{
-     res.react('535459149220413441').then(r=>{
-     res.react('535466102331801620').then(r=>{
-     res.react('🍸').then(r=>{
-     res.react('❌').then(r=>{
- 
-    let aaa = (reaction, user) => reaction.emoji.name === '535459149723598878' && user.id === msg.author.id;    
-    let mmm = (reaction, user) => reaction.emoji.name === '535459149908017153' && user.id === msg.author.id;
-    let fff = (reaction, user) => reaction.emoji.name === '535459149220413441' && user.id === msg.author.id;
-    let bbb = (reaction, user) => reaction.emoji.name === '535466102331801620' && user.id === msg.author.id;
-    let bbbb = (reaction, user) => reaction.emoji.name === '🍸' && user.id === msg.author.id;
-    let ccc = (reaction, user) => reaction.emoji.name === '❌' && user.id === msg.author.id;
- 
-    let aa = res.createReactionCollector(aaa, { maxMatches:1 , time: 20000 , });
-    let mm = res.createReactionCollector(mmm, { maxMatches:1 , time: 20000 , });
-    let ff = res.createReactionCollector(fff, { maxMatches:1 , time: 20000 , });
-    let bb = res.createReactionCollector(bbb, { maxMatches:1 , time: 20000 , });
-    let bl = res.createReactionCollector(bbbb,{ maxMatches:1 , time: 20000 , });
-    let cc = res.createReactionCollector(ccc, { maxMatches:1 , time: 20000 , });
- 
-aa.on("collect", r => {
-    msg.guild.member(user.id).addRole(a);
-    msg.channel.send('`تم اعطائك رتبة للعبة Agar`');
-    msg.delete();
-    })
-mm.on("collect", r => {
-    msg.guild.member(user.id).addRole(m);
-    msg.channel.send('`تم اعطائك رتبة للعبة Mincraft `');
-    msg.delete();
-})
-ff.on("collect", r => {
-    msg.guild.member(user.id).addRole(f);
-    msg.channel.send('`تم اعطائك رتبة للعبة Fortnite `');
-    msg.delete();
-})
-bb.on("collect", r => {
-    msg.guild.member(user.id).addRole(b);
-    msg.channel.send('`تم اعطائك رتبة للعبة Brawlhalla `');
-    msg.delete();
-})
-bl.on("collect", r => {
-    msg.guild.member(user.id).addRole(black);
-    msg.channel.send('`تم اعطائك رتبة للعبة Blacksquad `');
-    msg.delete();
-})
-cc.on("collect", r => {
-    msg.delete();
-})
-     })
-     })
-     })
-     })
-     })
-     })
-     })
-     }
-     });
-
 
 const devs = ["348953140315291649"];
 const adminprefix = ["#"];
@@ -177,79 +53,81 @@ if (message.content.startsWith('#setavatar')) {
 
 const temp = {};
 client.on('message', async message => {
- if(message.channel.type === "dm") return;
-  if(message.author.bot) return;
-   if(!temp[message.guild.id]) temp[message.guild.id] = {
+  if (message.channel.type === "dm") return;
+  if (message.author.bot) return;
+  if (!temp[message.guild.id]) temp[message.guild.id] = {
     time: "3000",
-     category : 'Temporary Channels',
-      channel : 'انشاء روم مؤقت'
-       }
-        if(message.content.startsWith('#temp on')){
-         if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-          var ggg= message.guild.createChannel('Temporary Channels', 'category').then(cg => {
-           var ccc =message.guild.createChannel('انشاء روم مؤقت', 'voice').then(ch => {
-            ch.setParent(cg)
-             message.channel.send('**:white_check_mark:  تم تفعيل الخاصية بنجاح **')
-              client.on('message' , message => {
-               if(message.content === '-temp off') {
-                if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-                 cg.delete()
-                  ch.delete()
-                   message.channel.send('**:white_check_mark:  تم تعطيل الخاصية بنجاح **  ')
-                    }
-                     });
-                      const time = temp[message.guild.id].time
-                       client.on('message' , message => {
-                        if (message.content.startsWith(prefix + "temp time")) {
-                         if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-                          let newTime= message.content.split(' ').slice(1).join(" ")
-                          if(!newTime) return message.reply(`**${prefix}temptime <time>  \`1000 = 1s\`**`)
-	                 if(isNaN(newTime)) return message.reply(`** The Time Be Nambers :face_palm: **`);
-	                if(newTime < 1) return message.reply(`**The Time Be Up \`3000s\`**`)
-                       temp[message.guild.id].time = newTime
-                      message.channel.send(`**:white_check_mark:  تم حفظ التغييرات  - \`${newTime}\`**`);
-                     }
-                    });
-                   client.on('voiceStateUpdate', (old, neww) => {
-                  let newUserChannel = neww.voiceChannel
-                 let oldUserChannel = old.voiceChannel
-                temp[message.guild.id].category = cg.id
-               temp[message.guild.id].channel = ch.id
-              let channel = temp[message.guild.id].channel
-             let category = temp[message.guild.id].category
-            if(oldUserChannel === undefined && newUserChannel !== undefined && newUserChannel.id == channel) {
-           neww.guild.createChannel(neww.displayName , 'voice').then(c => {
-          c.setParent(category)
-         let scan = setTimeout(()=>{
-        if(!neww.voiceChannel) {
-       c.delete();
-      client.channels.get(channel).overwritePermissions(neww, {
-     CONNECT:true,
-    SPEAK:true
-   })
+    category: 'Temporary Channels',
+    channel: 'انشاء روم مؤقت'
   }
- }, temp[neww.guild.id].time);
-  c.overwritePermissions(neww, {
-   CONNECT:true,
-    SPEAK:true,
-     MANAGE_CHANNEL:true,
-      MUTE_MEMBERS:true,
-       DEAFEN_MEMBERS:true,
-	MOVE_MEMBERS:true,
-	 VIEW_CHANNEL:true
-	  })
-	   neww.setVoiceChannel(c)
-            })
-             client.channels.get(channel).overwritePermissions(neww, {
-	      CONNECT:false,
-	       SPEAK:false
-		})
-               }
-              })
-             })
-           })
+  if (message.content.startsWith('-temp on')) {
+    if (!message.member.hasPermission(`MANAGE_GUILD`)) return;
+    var ggg = message.guild.createChannel('Temporary Channels', 'category').then(cg => {
+      var ccc = message.guild.createChannel('انشاء روم مؤقت', 'voice').then(ch => {
+        ch.setParent(cg)
+        temp[message.guild.id].channel = ch.id
+        message.channel.send('**:white_check_mark:  تم تفعيل الخاصية بنجاح **')
+        client.on('message', message => {
+          if (message.content === '-temp off') {
+            if (!message.member.hasPermission(`MANAGE_GUILD`)) return;
+            cg.delete()
+            ch.delete()
+            message.channel.send('**:white_check_mark:  تم تعطيل الخاصية بنجاح **  ')
           }
-      });
+        });
+        const time = temp[message.guild.id].time
+        client.on('message', message => {
+          if (message.content.startsWith("-temp time")) {
+            if (!message.member.hasPermission(`MANAGE_GUILD`)) return;
+            let args = message.content.split(' ').slice(2, 5).join("");
+            let newTime = args
+            if (!newTime) return message.reply(`**${prefix}temptime <time>  \`1000 = 1s\`**`)
+            if (isNaN(newTime)) return message.reply(`** The Time Be Nambers :face_palm: **`);
+            if (newTime < 1) return message.reply(`**The Time Be Up \`3000s\`**`)
+            temp[message.guild.id].time = newTime
+            message.channel.send(`**:white_check_mark:  تم حفظ التغييرات  - \`${newTime}\`**`);
+          }
+        });
+        client.on('voiceStateUpdate', (old, neww) => {
+          let newUserChannel = neww.voiceChannel
+          let oldUserChannel = old.voiceChannel
+          temp[message.guild.id].category = cg.id
+          temp[message.guild.id].channel = ch.id
+          let channel = temp[message.guild.id].channel
+          let category = temp[message.guild.id].category
+          if (oldUserChannel === undefined && newUserChannel !== undefined && newUserChannel.id == channel) {
+            neww.guild.createChannel(neww.displayName, 'voice').then(c => {
+              c.setParent(cg)
+              let scan = setTimeout(() => {
+                if (!neww.voiceChannel) {
+                  c.delete();
+                  client.channels.get(channel).overwritePermissions(neww, {
+                    CONNECT: true,
+                    SPEAK: true
+                  })
+                }
+              }, temp[neww.guild.id].time);
+              c.overwritePermissions(neww, {
+                CONNECT: true,
+                SPEAK: true,
+                MANAGE_CHANNEL: true,
+                MUTE_MEMBERS: true,
+                DEAFEN_MEMBERS: true,
+                MOVE_MEMBERS: true,
+                VIEW_CHANNEL: true
+              })
+              neww.setVoiceChannel(c)
+            })
+            client.channels.get(channel).overwritePermissions(neww, {
+              CONNECT: false,
+              SPEAK: false
+            })
+          }
+        })
+      })
+    })
+  }
+});
 
 client.on("message", message => {
             if(message.content.startsWith("#تقديم")) {
