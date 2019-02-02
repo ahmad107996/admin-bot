@@ -464,7 +464,6 @@ client.on('message', message => {
 	.addField('قبول', 'لي قبول عضو')
 	.addField('room1', 'لي انشاء روم التقديمات')
 	.addField('room2', 'لي انشاء روم القبول-الرفض')
-	.addField('room2', 'لي انشاء روم القبول-الرفض')
 	.addField('cc', 'لصنع الاوان')
 	.addField('voicesetup', 'لصنع روم فويس اون لاين')
 	message.channel.send(helpEmbed);
