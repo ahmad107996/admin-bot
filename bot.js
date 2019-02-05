@@ -363,7 +363,7 @@ client.on('message', message => {
                     return message.channel.send('**Please make sure that `Support Team` role exists and it\'s not duplicated.**');
                 };
             if(!ticketsStation) {
-                message.guild.createChannel("Ticket", "category");
+                message.guild.createChannel("tickets", "category");
             };
                 message.guild.createChannel(`𝑻𝑰𝑪𝑲𝑬𝑻`, "text").then(ticket => {
                     message.delete()
